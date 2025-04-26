@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="monetag" content="f47685bc0d2e74dadd0cacadd4ce9c65">
+    <title>Would You Rather</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Updated Installation Check Script -->
+    <script src="https://ligheechoagool.com/88/tag.min.js" data-zone="144407" async data-cfasync="false"></script>
+</head>
+<body>
+    <div class="game-container">
+        <!-- Dark Mode Toggle -->
+        <div class="toggle-container">
+            <input type="checkbox" id="mode-toggle">
+            <label for="mode-toggle" class="toggle-label"></label>
+        </div>
+
+        <!-- Game Content -->
+        <h1>Would you rather</h1>
+        <p id="question">Loading question...</p>
+        <button id="option1" class="option-btn">Option 1</button>
+        <p class="or-text">or</p>
+        <button id="option2" class="option-btn">Option 2</button>
+
+        <!-- Result Display -->
+        <div id="result" class="hidden">
+            <p>Your answer: <span id="selected-answer"></span></p>
+            <p id="percentage"></p>
+        </div>
+
+        <!-- Inline Popup -->
+        <div id="inline-popup" class="inline-popup hidden">
+            <span id="popup-text"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
