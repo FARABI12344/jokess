@@ -3,22 +3,22 @@ const questions = [
         question: "Would you rather be able to fly or be invisible?",
         option1: "Fly",
         option2: "Invisible",
-        percentage1: 50, // Custom percentage for Fly
-        percentage2: 50  // Custom percentage for Invisible
+        percentage1: 50,
+        percentage2: 50
     },
     {
         question: "Would you rather have unlimited money or unlimited time?",
         option1: "Unlimited Money",
         option2: "Unlimited Time",
-        percentage1: 70, // Custom percentage for Unlimited Money
-        percentage2: 30  // Custom percentage for Unlimited Time
+        percentage1: 70,
+        percentage2: 30
     },
     {
         question: "Would you rather have a pet dragon or a pet unicorn?",
         option1: "Dragon",
         option2: "Unicorn",
-        percentage1: 60, // Custom percentage for Dragon
-        percentage2: 40  // Custom percentage for Unicorn
+        percentage1: 60,
+        percentage2: 40
     },
 ];
 
@@ -44,20 +44,16 @@ function handleAnswer(answer) {
 
     canAnswer = false;
 
-    // Get the predefined percentages for the current question
     const percentage1 = questions[currentQuestionIndex].percentage1;
     const percentage2 = questions[currentQuestionIndex].percentage2;
 
-    // Update the text of both options with percentages
     document.getElementById("option1").innerText = `${questions[currentQuestionIndex].option1} - ${percentage1}%`;
     document.getElementById("option2").innerText = `${questions[currentQuestionIndex].option2} - ${percentage2}%`;
 
-    // Show the selected answer and percentage
     document.getElementById("selected-answer").innerText = answer;
     document.getElementById("percentage").innerText = `Chosen by: ${answer === questions[currentQuestionIndex].option1 ? percentage1 : percentage2}% of users`;
     document.getElementById("result").classList.remove("hidden");
 
-    // Show success popup after 2 seconds
     setTimeout(() => {
         showPopup("✅ Loaded Next Question");
         currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
@@ -74,7 +70,7 @@ function showPopup(message) {
     popup.classList.remove("hidden");
     setTimeout(() => {
         popup.classList.add("hidden");
-    }, 3000); // Fade out after 3 seconds
+    }, 3000);
 }
 
 // Dark Mode Toggle
@@ -99,4 +95,3 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("mode-toggle").addEventListener("change", toggleMode);
 document.getElementById("option1").addEventListener("click", (e) => handleAnswer(e.target.innerText));
 document.getElementById("option2").addEventListener("click", (e) => handleAnswer(e.target.innerText));
-
